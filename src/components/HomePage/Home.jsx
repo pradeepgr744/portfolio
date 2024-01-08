@@ -36,7 +36,7 @@ const Home = () => {
             <div className="flex-shrink-0 pt-0.5">
               <img
                 className="h-10 w-10 rounded-full"
-                src="/static/img1.jpg"
+                src="src/assets/img1.jpg"
                 alt=""
               />
             </div>
@@ -75,7 +75,7 @@ const Home = () => {
         <div className=' lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%] m-auto h-[100dvh]'>
           <div className='md:w-[75%] sm:w-[100%] mobile:w-[100%] mobile:m-auto mb-28'>
             <div className='flex justify-between'>
-              <img src="/static/img2.jpg" alt="" className='w-[150px] mobile:w-[120px] rounded-full m-3 mobile:mt-20 mt-10 mb-10 shadow-2xl shadow-[#fdb724]' />
+              <img src="src/assets/img2.jpg" alt="" className='w-[150px] mobile:w-[120px] rounded-full m-3 mobile:mt-20 mt-10 mb-10 shadow-2xl shadow-[#fdb724]' />
               <div className="tooltip-container mt-48 mr-20">
                 <div className="tooltip">
                   <div className="text">Save Trees</div>

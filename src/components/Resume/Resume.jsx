@@ -6,7 +6,7 @@ const Resume = () => {
   return (
     <>
       <div class="w-full h-screen flex items-center justify-center">
-        <iframe src="/static/Resume-pradeep.pdf" className='w-full h-full'></iframe>
+        <iframe src="src/assets/Resume-pradeep.pdf" className='w-full h-full'></iframe>
       </div>
     </>
   )

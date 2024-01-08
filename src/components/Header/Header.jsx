@@ -15,7 +15,7 @@ const Header = () => {
       <nav className="backdrop-blur-sm bg-white/30  pt-2 pb-2 mb-0">
         <div className="flex flex-wrap justify-between items-center mx-auto lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%]">
           <Link to="" className="flex items-center">
-            <img src="/static/icon1.jpg" className='p-0 w-12 rounded-full' />
+            <img src="src/assets/icon1.jpg" className='p-0 w-12 rounded-full' />
             {/* <h1 className='font-bold font-sans ml-2'>PRADEEP</h1> */}
           </Link>
 
