@@ -1,148 +1,87 @@
-import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
-import React, { useRef } from "react";
-import { FiArrowRight } from "react-icons/fi";
+import React, { useRef, useMemo, useState, useEffect } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, Sphere } from "@react-three/drei";
+import { pointsInner, pointsOuter } from "../../utils/utils";
+import { Link } from "react-router-dom";
 
-export const About = () => {
+const About = () => {
+  const [isCanvasLoaded, setCanvasLoaded] = useState(false);
+
+  useEffect(() => {
+    // Simulate an asynchronous task (e.g., loading assets) here
+    // For demonstration purposes, we'll use a setTimeout
+    const timeoutId = setTimeout(() => {
+      setCanvasLoaded(true);
+    }, 1000); // Adjust the time as needed
+
+    // Clear the timeout on component unmount to avoid memory leaks
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
-    <section className="bg-neutral-950 p-4 md:p-8">
-      <div className="mx-auto max-w-5xl">
-        <Link
-          heading="About"
-          subheading="Learn what we do here"
-          imgSrc="/imgs/random/11.jpg"
-          href="#"
-        />
-        <Link
-          heading="Clients"
-          subheading="We work with great people"
-          imgSrc="/imgs/random/6.jpg"
-          href="#"
-        />
-        <Link
-          heading="Portfolio"
-          subheading="Our work speaks for itself"
-          imgSrc="/imgs/random/4.jpg"
-          href="#"
-        />
-        <Link
-          heading="Careers"
-          subheading="We want cool people"
-          imgSrc="/imgs/random/5.jpg"
-          href="#"
-        />
-        <Link
-          heading="Fun"
-          subheading="Incase you're bored"
-          imgSrc="/imgs/random/10.jpg"
-          href="#"
-        />
-      </div>
-    </section>
+    <div className="relative">
+      <Canvas
+        camera={{
+          position: [10, -7.5, -5],
+        }}
+        style={{ height: "100vh" }}
+        className="bg-slate-900"
+      >
+        <OrbitControls maxDistance={20} minDistance={10} />
+        <directionalLight />
+        <pointLight position={[-30, 0, -30]} power={10.0} />
+        <PointCircle />
+      </Canvas>
+
+      {isCanvasLoaded && (
+        <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-center pointer-events-none">
+          <h1 className="text-5xl font-semibold text-white mb-6 animate__animated animate__fadeInDown">About Me</h1>
+        <p className="max-w-prose text-white animate__animated animate__fadeIn animate__delay-1s">Passionate FullStack Developer from Bengaluru, India. Turning ideas into code and creating digital experiences.</p>
+        <p className="text-white mt-2"><strong className="text-yellow-300 font-semibold">Skills:</strong> HTML, CSS, JavaScript, MERN Stack, Java</p>
+        <p className="text-white mt-2"><strong className="text-yellow-300 font-semibold">Projects:</strong> YouTube Clone, Weather App, Video Streaming</p>
+        <p className="text-white mt-2 mb-5"><strong className="text-yellow-300 font-semibold ">Contact:</strong> 
+            <a href="mailto:pradeepgr744@gmail.com" className="text-yellow-300 hover:text-white transition duration-300 pointer-events-auto"> pradeepgr744@gmail.com</a> | 
+            <a href="https://github.com/pradeepgr744" className="text-yellow-300 hover:text-white transition duration-300 pointer-events-auto"> GitHub</a>
+        </p>
+        
+        <Link to="/contact" className="bg-white text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 mt-4 rounded-full transition duration-300 hover-scale  font-semibold pointer-events-auto">Let's Connect</Link>
+        <p className="text-white mt-4 animate__animated animate__fadeIn animate__delay-2s">Excited to connect and collaborate on innovative projects! 🚀</p>
+    
+        </div>
+      )}
+    </div>
   );
 };
 
-const Link = ({ heading, imgSrc, subheading, href }) => {
+const PointCircle = React.memo(() => {
   const ref = useRef(null);
 
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  useFrame(({ clock }) => {
+    if (ref.current?.rotation) {
+      ref.current.rotation.z = clock.getElapsedTime() * 0.05;
+    }
+  });
 
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
+  return useMemo(() => (
+    <group ref={ref}>
+      {[...pointsInner, ...pointsOuter].map((point) => (
+        <Point key={point.idx} position={point.position} color={point.color} />
+      ))}
+    </group>
+  ), []);
+});
 
-  const top = useTransform(mouseYSpring, [0.5, -0.5], ["40%", "60%"]);
-  const left = useTransform(mouseXSpring, [0.5, -0.5], ["60%", "70%"]);
-
-  const handleMouseMove = (e) => {
-    const rect = ref.current.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-
-    x.set(xPct);
-    y.set(yPct);
-  };
-
+const Point = ({ position, color }) => {
   return (
-    <motion.a
-      href={href}
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      initial="initial"
-      whileHover="whileHover"
-      className="group relative flex items-center justify-between border-b-2 border-neutral-700 py-4 transition-colors duration-500 hover:border-neutral-50 md:py-8"
-    >
-      <div>
-        <motion.span
-          variants={{
-            initial: { x: 0 },
-            whileHover: { x: -16 },
-          }}
-          transition={{
-            type: "spring",
-            staggerChildren: 0.075,
-            delayChildren: 0.25,
-          }}
-          className="relative z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
-        >
-          {heading.split("").map((l, i) => (
-            <motion.span
-              variants={{
-                initial: { x: 0 },
-                whileHover: { x: 16 },
-              }}
-              transition={{ type: "spring" }}
-              className="inline-block"
-              key={i}
-            >
-              {l}
-            </motion.span>
-          ))}
-        </motion.span>
-        <span className="relative z-10 mt-2 block text-base text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50">
-          {subheading}
-        </span>
-      </div>
-
-      <motion.img
-        style={{
-          top,
-          left,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
-        variants={{
-          initial: { scale: 0, rotate: "-12.5deg" },
-          whileHover: { scale: 1, rotate: "12.5deg" },
-        }}
-        transition={{ type: "spring" }}
-        src={imgSrc}
-        className="absolute z-0 h-24 w-32 rounded-lg object-cover md:h-48 md:w-64"
-        alt={`Image representing a link for ${heading}`}
+    <Sphere position={position} args={[0.1, 10, 10]}>
+      <meshStandardMaterial
+        emissive={color}
+        emissiveIntensity={0.5}
+        roughness={0.5}
+        color={color}
       />
-
-      <motion.div
-        variants={{
-          initial: {
-            x: "25%",
-            opacity: 0,
-          },
-          whileHover: {
-            x: "0%",
-            opacity: 1,
-          },
-        }}
-        transition={{ type: "spring" }}
-        className="relative z-10 p-4"
-      >
-        <FiArrowRight className="text-5xl text-neutral-50" />
-      </motion.div>
-    </motion.a>
+    </Sphere>
   );
 };
+
+export default About;

@@ -7,7 +7,30 @@ body {
 }
 
 * {
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans',  sans-serif; */
+    @font-face {
+        font-family: "Inter";
+        src: url('../src/assets/Inter-Regular.woff2') format('woff2'),
+            url('../src/assets/Inter-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url('../src/assets/OpenSans-Regular.woff2') format('woff2'),
+        url('../src/assets/OpenSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url('../src/assets/Inter-Regular.woff2') format('woff2'),
+        url('../src/assets/Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 
@@ -250,5 +273,25 @@ rotate: z 20deg;
 
 .link-icon:hover .main-icon {
     box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+/* about */
+
+.hi {
+    background: linear-gradient(135deg, #3498db 0%, #8e44ad 100%);
+}
+.bg-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/ps-neutral.png');
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: -1;
+}
+.hover-scale:hover {
+    transform: scale(1.05);
 }
 

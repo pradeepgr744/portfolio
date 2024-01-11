@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import StaggeredDropDown from '../Drop-down/Drop_down';
+import { FiHome, FiUser, FiMail, FiBriefcase } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 const Header = () => {
 
   let [open, setOpen] = useState(false);
   const genericHamburgerLine = `h-1 w-8 my-1 rounded-full bg-black transition ease transform duration-300`;
 
+  const [open1, setOpen1] = useState(false);
 
 
 
@@ -19,23 +22,23 @@ const Header = () => {
             {/* <h1 className='font-bold font-sans ml-2'>PRADEEP</h1> */}
           </Link>
 
+
           <button
 
             className='flex flex-col h-12 w-12 outline-none justify-center items-center group text-3xl cursor-pointer md:hidden'
-            onClick={() => setOpen(!open)}
-          >
+            onClick={() => setOpen1((pv) => !pv)}          >
             <div
-              className={`${genericHamburgerLine} ${open
+              className={`${genericHamburgerLine} ${open1
                 ? "rotate-45 translate-y-3 opacity-50 group-hover:opacity-100"
                 : "opacity-50 group-hover:opacity-100"
                 }`}
             />
             <div
-              className={`${genericHamburgerLine} ${open ? "opacity-0" : "opacity-50 group-hover:opacity-100"
+              className={`${genericHamburgerLine} ${open1 ? "opacity-0" : "opacity-50 group-hover:opacity-100"
                 }`}
             />
             <div
-              className={`${genericHamburgerLine} ${open
+              className={`${genericHamburgerLine} ${open1
                 ? "-rotate-45 -translate-y-3 opacity-50 group-hover:opacity-100"
                 : "opacity-50 group-hover:opacity-100"
                 }`}
@@ -45,8 +48,9 @@ const Header = () => {
 
 
 
+
           <div
-            className={`md:flex md:items-center  absolute md:static md:bg-transparent mobile:bg-[#fff5ef]/95 sm:bg-[#fff5ef]/95 md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 pr-9 transition-all delay-0 duration-300 ease-in-out ${open ? 'top-14 ' : 'top-[-490px]'} justify-between items-center w-full lg:flex lg:w-auto lg:order-11`}
+            className={`md:flex md:items-center  absolute md:static bg-transparent md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 pr-9 transition-all delay-0 duration-300 ease-in-out ${open ? 'top-14 ' : 'top-[-490px]'} justify-between items-center w-full lg:flex lg:w-auto lg:order-11`}
             id="mobile-menu-2"
           >
             <ul className='flex flex-col h-auto items-center font-medium  md:flex-row lg:space-x-8 md:mt-0'>
@@ -57,10 +61,10 @@ const Header = () => {
                     `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-500" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-700 lg:p-0`
 
                   }
-                  onClick={() => setOpen(false)}
+                  
                   title='Home'
                 >
-                  Home
+               Home
                 </NavLink>
               </li>
               <li>
@@ -69,7 +73,7 @@ const Header = () => {
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-500" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-700 lg:p-0`
                   }
-                  onClick={() => setOpen(false)}
+                  
                   title='About'
                 >
                   About
@@ -81,7 +85,7 @@ const Header = () => {
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-500" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-700 lg:p-0`
                   }
-                  onClick={() => setOpen(false)}
+                  
                   title='Projects'
                 >
                   Projects
@@ -93,26 +97,96 @@ const Header = () => {
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-500" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-700 lg:p-0`
                   }
-                  onClick={() => setOpen(false)}
+                  
                   title='Contact'
                 >
                   Contact Me
                 </NavLink>
               </li>
               <li>
-                  <StaggeredDropDown />
+                <StaggeredDropDown />
               </li>
-            
-
-
             </ul>
           </div>
 
         </div>
       </nav>
 
+      <div className="flex items-center justify-center lg:hidden xl:hidden md:hidden">
+        <motion.div animate={open1 ? "open" : "closed"} className="relative">
+
+          <motion.ul
+            initial={wrapperVariants.closed}
+            variants={wrapperVariants}
+            style={{ originY: "top", translateX: "-50%" }}
+            className="flex flex-col gap-2 w-80 rounded-lg backdrop-blur-3xl bg-white/30 shadow-xl absolute top-[120%] "
+          >
+            <li><NavLink to="" ><Option setOpen1={setOpen1} Icon={FiHome} text="Home" /></NavLink></li>
+            <li><NavLink to="/About"><Option setOpen1={setOpen1} Icon={FiUser} text="About" /></NavLink></li>
+            <li><NavLink to="/Projects"><Option setOpen1={setOpen1} Icon={FiMail} text="Project" /></NavLink></li>
+            <li><NavLink to="/Contact"><Option setOpen1={setOpen1} Icon={FiBriefcase} text="Contact Me" /></NavLink></li>
+            <li><StaggeredDropDown /></li>
+          </motion.ul>
+        </motion.div>
+      </div>
+
     </header>
   );
 }
 
+const Option = ({ text, Icon, setOpen1 }) => {
+  return (
+    <motion.li
+      variants={itemVariants}
+      onClick={() => setOpen1(false)}
+      className="flex items-center justify-center gap-2 w-full py-2 text-sm font-medium whitespace-nowrap rounded-md hover:bg-indigo-100 text-slate-700 hover:text-indigo-500 transition-colors cursor-pointer"
+    >
+      <motion.span variants={actionIconVariants}>
+        <Icon />
+      </motion.span>
+      <span>{text}</span>
+    </motion.li>
+  );
+};
+
+
 export default Header
+
+const wrapperVariants = {
+  open: {
+    scaleY: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+  closed: {
+    scaleY: 0,
+    transition: {
+      when: "afterChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      when: "beforeChildren",
+    },
+  },
+  closed: {
+    opacity: 0,
+    y: -15,
+    transition: {
+      when: "afterChildren",
+    },
+  },
+};
+
+const actionIconVariants = {
+  open: { scale: 1, y: 0 },
+  closed: { scale: 0, y: -7 },
+};

@@ -1,66 +1,68 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Toaster, toast } from 'react-hot-toast';
+import { TypeAnimation } from 'react-type-animation';
+import 'animate.css';
+import { Bottompage } from '../Pages/bottompage';
+
+
 
 const Home = () => {
   const ref = useRef(null);
-  const [date, setdate] = useState(new Date())
+  const [date, setDate] = useState(new Date());
+  const notificationDisplayed = useRef(false);
 
   useEffect(() => {
-    setdate(new Date())
-    notify()
+    setDate(new Date());
+    if (!notificationDisplayed.current) {
+      notify();
+      notificationDisplayed.current = true;
+    }
   }, []);
 
-  const check = () => {
-    const temp = date.getHours()
+  const checkGreeting = () => {
+    const temp = date.getHours();
     if (temp >= 5 && temp <= 11) {
       return "Good morning!";
     } else if (temp >= 12 && temp <= 15) {
-      return "Good afternoon!", temp
+      return "Good afternoon!";
     } else if (temp >= 16 && temp <= 19) {
       return "Good evening!";
     } else if (temp >= 20 || temp <= 4) {
       return "Have some sleep, Good night!";
     } else {
-      return "it's nice to meet you!";
+      return "It's nice to meet you!";
     }
-  }
+  };
 
-  const notify = () => {
+  function notify() {
     toast.custom((t) => (
-      <div
-        className={`${t.visible ? 'animate-enter' : 'animate-leave'
-          } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
-      >
+      <div className={`${t.visible ? 'animate-enter' : 'animate-leave'} max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}>
         <div className="flex-1 w-0 p-4">
           <div className="flex items-start">
             <div className="flex-shrink-0 pt-0.5">
-              <img
-                className="h-10 w-10 rounded-full"
-                src="src/assets/img1.jpg"
-                alt=""
-              />
+              <img className="h-10 w-10 rounded-full" src="src/assets/img1.jpg" alt="" />
             </div>
             <div className="ml-3 flex-1">
               <h1 className="text-sm font-medium text-gray-900 flex justify-between">
-                <p>hi👋</p><p> Date : {new Date().toLocaleDateString()}</p>
+                <p>hi👋</p>
+                <p>Date : {new Date().toLocaleDateString()}</p>
               </h1>
-
-              <p className="mt-1 text-sm text-gray-500">
-                {check()}
-              </p>
+              <p className="mt-1 text-sm text-gray-500">{checkGreeting()}</p>
             </div>
           </div>
         </div>
-        <div className="flex border-l border-gray-200">
-          <button
-            onClick={() => toast.dismiss(t.id)}
-            className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            Close
-          </button>
-        </div>
+        {/* <div className="flex border-l border-gray-200">
+           <button
+             onClick={() => toast.dismiss(t.id)}
+             className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+           >
+             Close
+           </button>
+         </div> */}
       </div>
-    ))
+    ), {
+      duration: 2000, // Set the duration to 1000 milliseconds (1 second)
+    });
   }
 
   const handleClick = () => {
@@ -75,7 +77,7 @@ const Home = () => {
         <div className=' lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%] m-auto h-[100dvh]'>
           <div className='md:w-[75%] sm:w-[100%] mobile:w-[100%] mobile:m-auto mb-28'>
             <div className='flex justify-between'>
-              <img src="src/assets/img2.jpg" alt="" className='w-[150px] mobile:w-[120px] rounded-full m-3 mobile:mt-20 mt-10 mb-10 shadow-2xl shadow-[#fdb724]' />
+              <img src="src/assets/img2.jpg" alt="" className='w-[150px] mobile:w-[120px] rounded-full m-3 mobile:mt-20 mt-10 mb-10 shadow-2xl shadow-[#fdb724]  animate__animated animate__fadeInDown' />
               <div className="tooltip-container mt-48 mr-20">
                 <div className="tooltip">
                   <div className="text">Save Trees</div>
@@ -89,10 +91,19 @@ const Home = () => {
             </div>
             <div>
               <p className='md:text-[40px]  text-gray-800 md:leading-[1.3] sm:text-2xl mobile:text-xl font-light'>Hi, I'm
-                <span className='font-semibold text-black'> Pradeep, </span>
-                a
-                <span className='font-semibold text-black'> Full-Stack developer </span>
-                shaping seamless digital landscapes from
+                <span className='font-semibold text-black'><TypeAnimation
+                  sequence={[" Pradeep "]}
+                  speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
+                  cursor={false}
+                /></span>
+                <span> a </span>
+                <span className='font-semibold text-black'>
+                  <TypeAnimation
+                    sequence={[" Full-Stack developer "]}
+                    speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
+                    cursor={false}
+                  /></span>
+                <span> shaping seamless digital landscapes from</span>
                 <span className='font-semibold text-black'> frontend </span>
                 finesse to
                 <span className='font-semibold text-black'> backend </span>
@@ -100,7 +111,7 @@ const Home = () => {
             </div>
             <div className='mt-5 leading-[1.2] text-sm'>
               <p>Previously @<a href='https://www.safepro.tech/' target='_blank' rel='noopener noreferrer' className='text-blue-500'>Safepro</a> as Intern</p>
-              <p>Pasionate about <span className='font-semibold'>solving complex problems</span></p>
+              <p>Pasionate about <span className='font-semibold'>solving complex problems </span> <span>that significantly ease the life of the end user.</span></p>
             </div>
           </div>
           <div className='w-full flex justify-center mt-20 ScrollButton cursor-pointer'>
@@ -135,7 +146,9 @@ const Home = () => {
           {date.getHours()}
         </button>
       </section>
-      
+
+
+      <Bottompage />
     </>
   )
 }

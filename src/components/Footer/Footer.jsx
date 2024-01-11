@@ -1,24 +1,21 @@
 import React from 'react'
 
 const Footer = () => {
-  const emailAddress = 'pradeepgr744@gmail.com'; // Replace with your desired email address
 
-  const handleEmailClick = () => {
-    const emailUrl = `mailto:${emailAddress}`;
-    window.open(emailUrl, '_blank');
-  
-  }
   return (
     <>
-      
 
 
-      <section className='bg-[#101010] text-[#fff5ef] '>
+
+      <section className='bg-[#1A1A1A] text-[#AAA] '>
+        <div>
+          <img src="src/assets/icon3.jpg" alt="" width={150} height={80}  className='rounded-xl  m-auto pt-5'/>
+        </div>
         <section className='lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%] m-auto '>
           <div className='flex md:flex-row  mobile:flex-col sm:flex-col justify-around mobile:text-center sm:text-center w-[80%] m-auto mb-10 pt-10'>
             <div className=''>
-              <h1 className='text-xl font-semibold'>Quick Link</h1>
-              <div className='text-md leading-[1.6] mt-2'>
+              <h1 className='text-2xl font-semibold'>Quick Link</h1>
+              <div className='text-md leading-[2.2] mt-2'>
                 <p>About</p>
                 <p>Portfolio</p>
                 <p>Resume</p>
@@ -27,12 +24,14 @@ const Footer = () => {
             </div>
             <div>
               <div className=''>
-                <h1 className='font-semibold text-xl sm:mt-5 md:mt-auto mobile:mt-4'>Contact</h1>
-                <div className='leading-[1.6] mt-2'>
-                  <h1 >Bangalore-562129</h1>
-
-                  <p>📞+91 9739640989</p>
-                  <p onClick={handleEmailClick} >📧 pradeepgr744@gmail.com</p>
+                <h1 className='font-semibold text-2xl sm:mt-5 md:mt-auto mobile:mt-8'>Contact</h1>
+                <div className='leading-[2.2] mt-2'>
+                  <a href='https://maps.app.goo.gl/BMB1sAXfrsmykGn87'>
+                    <p >Bangalore-562129</p></a>
+                  <a href='tel:+91 9739640989'>
+                    <p>📞+91 9739 640 989</p></a>
+                  <a href='mailto:pradeepgr744@gmail.com'>
+                    <p>📧 pradeepgr744@gmail.com</p></a>
                 </div>
               </div>
               <div className='flex mobile:justify-center sm:justify-center gap-5 mt-7'>
