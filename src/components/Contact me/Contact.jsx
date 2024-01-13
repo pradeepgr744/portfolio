@@ -1,6 +1,9 @@
 import React, { useState, useRef } from "react";
 import Confetti from "react-confetti";
 import { useForm } from 'react-hook-form';
+import axios from "axios";
+
+
 
 const Contact = () => {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -13,21 +16,133 @@ const Contact = () => {
     const limit1 = 10;
     setNum1(numericValue.slice(0, limit1));
   };
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+
+    const options1 = {
+      method: 'POST',
+      url: 'https://send-mail-serverless.p.rapidapi.com/send',
+      headers: {
+        'content-type': 'application/json',
+        'Content-Type': 'application/json',
+        'X-RapidAPI-Key': '7d1fad5568msh911fde48846fd8dp1c0b2fjsn40a9c8205509',
+        'X-RapidAPI-Host': 'send-mail-serverless.p.rapidapi.com'
+      },
+      data: {
+        personalizations: [
+          {
+            to: [
+              {
+                email: 'pradeepgr744@gmail.com',
+                name: 'Recipient name'
+              },
+            ]
+          }
+        ],
+        from: {
+          email: 'noreply@firebese.com',
+          name: 'noreply'
+        },
+        subject: 'Portfolio Contact-Form',
+        content: [
+          { type: 'text/html',
+          value: `<b>Lead from Your Portfolio</b><br><br>
+          <p>
+              <b>Name: </b> ${data.Name}<br>
+              <b>Email: </b> ${data.Email}<br>
+              <b>Phone Number: </b> ${data.Phone_Number}<br>
+              <b>Message: </b> ${data.Message}
+          </p>`
+          }
+        ],
+        headers: {
+          'List-Unsubscribe': '<mailto: unsubscribe@firebese.com?subject=unsubscribe>, <https://firebese.com/unsubscribe/id>'
+        }
+      }
+    };
+
+    const options2 = {
+      method: 'POST',
+      url: 'https://send-mail-serverless.p.rapidapi.com/send',
+      headers: {
+        'content-type': 'application/json',
+        'Content-Type': 'application/json',
+        'X-RapidAPI-Key': '7d1fad5568msh911fde48846fd8dp1c0b2fjsn40a9c8205509',
+        'X-RapidAPI-Host': 'send-mail-serverless.p.rapidapi.com'
+      },
+      data: {
+        personalizations: [
+          {
+            to: [
+              {
+                email: data.Email,
+                name: data.Name
+              },
+            ]
+          }
+        ],
+        from: {
+          email: 'noreply@firebese.com',
+          name: 'noreply'
+        },
+        subject: 'Thank You for Reaching Out!',
+        content: [
+          { type: 'text/html',
+          value: `<b>Hello </b>${data.Name}<br><br>
+          <p>
+          Thanks a lot for getting in touch! I've received your message,
+          and I'll get back to you as soon as I can.<br><br>
+          I appreciate the opportunity to connect.<br><br>
+          
+              
+          📞 Phone Number: <b>+91 9739640989</b><br>
+          ✉️ Email: <b>pradeepgr744@gmail.com</b><br><br>
+
+          Let's stay connected on:<br><br>
+
+          👉 GitHub: github.com/pradeepgr744<br>
+          👉 LinkedIn: linkedin.com/in/pradeep-g-r-838a98233<br><br>
+
+          Looking forward to connect with you soon!<br><br>
+
+          Regards,<br>
+          Pradeep G R<br>
+          Bangalore<br>
+          </p>`
+          }
+        ],
+        headers: {
+          'List-Unsubscribe': '<mailto: unsubscribe@firebese.com?subject=unsubscribe>, <https://firebese.com/unsubscribe/id>'
+        }
+      }
+    };
+
     if (
       [
-        data.First_Name,
-        data.Last_Name,
-        data.Email,
+        data.Name,
         data.Phone_Number,
+        data.Email,
         data.Message,].some((field) => field?.trim() !== "")
     ) {
-      console.log(data)
-      setShowConfetti(true);
-      reset();
-      setNum1("");
+
+      try {
+        const [response1, response2] = await Promise.all([
+          axios.request(options1),
+          axios.request(options2),
+        ]);
+        // console.log(response1.data);
+        // console.log(response2.data);
+        console.log(data)
+        setShowConfetti(true);
+        reset();
+        setNum1("");
+      } catch (error) {
+        console.error(error);
+      }
     }
+
   };
+
+
 
 
   return (

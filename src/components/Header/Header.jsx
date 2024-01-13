@@ -121,11 +121,11 @@ const Header = () => {
             style={{ originY: "top", translateX: "-50%" }}
             className="flex flex-col gap-2 w-80 rounded-lg backdrop-blur-3xl bg-white/30 shadow-xl absolute top-[120%] "
           >
-            <li><NavLink to="" ><Option setOpen1={setOpen1} Icon={FiHome} text="Home" /></NavLink></li>
-            <li><NavLink to="/About"><Option setOpen1={setOpen1} Icon={FiUser} text="About" /></NavLink></li>
-            <li><NavLink to="/Projects"><Option setOpen1={setOpen1} Icon={FiMail} text="Project" /></NavLink></li>
-            <li><NavLink to="/Contact"><Option setOpen1={setOpen1} Icon={FiBriefcase} text="Contact Me" /></NavLink></li>
-            <li><StaggeredDropDown /></li>
+            <div><NavLink to="" ><Option setOpen1={setOpen1} Icon={FiHome} text="Home" /></NavLink></div>
+            <div><NavLink to="/About"><Option setOpen1={setOpen1} Icon={FiUser} text="About" /></NavLink></div>
+            <div><NavLink to="/Projects"><Option setOpen1={setOpen1} Icon={FiMail} text="Project" /></NavLink></div>
+            <div><NavLink to="/Contact"><Option setOpen1={setOpen1} Icon={FiBriefcase} text="Contact Me" /></NavLink></div>
+            <div><StaggeredDropDown /></div>
           </motion.ul>
         </motion.div>
       </div>
