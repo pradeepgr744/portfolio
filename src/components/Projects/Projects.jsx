@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bottompage } from '../Pages/bottompage';
+import { Bottompage } from '../Pages/Bottompage.jsx';
 import Portfolio_Card from '../card/Portfolio_Card';
 import Card from '../card/Card';
 

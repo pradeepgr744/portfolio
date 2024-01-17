@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Toaster, toast } from 'react-hot-toast';
 import { TypeAnimation } from 'react-type-animation';
 import 'animate.css';
-import { Bottompage } from '../Pages/bottompage';
+import { Bottompage } from '../Pages/Bottompage';
 
 
 
