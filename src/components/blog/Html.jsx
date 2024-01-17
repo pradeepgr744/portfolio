@@ -1,7 +1,7 @@
 import React from 'react'
 import './blog.css'
 
-const Htmldoc = () => {
+const Html = () => {
     return (
         <>
             <div className='max-w-[80%] m-auto text-2xl'>
@@ -111,4 +111,4 @@ const Htmldoc = () => {
     )
 }
 
-export default Htmldoc
+export default Html

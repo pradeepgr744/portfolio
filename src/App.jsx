@@ -9,7 +9,8 @@ import Resume from './components/Resume/Resume.jsx'
 import PageNotFound from './components/PageNotFound/PageNotFound.jsx'
 import Blog from './components/blog/Blog.jsx'
 import Model from './components/Model/Model.jsx'
-import Htmldoc from './components/blog/htmldoc.jsx'
+import Html from './components/blog/Html.jsx'
+
 
 const App = () => {
   const router = createBrowserRouter(
@@ -22,7 +23,7 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/3dmodel' element={<Model />} />
-        <Route path='/htmldoc' element={<Htmldoc />} />
+        <Route path='/htmldoc' element={<Html />} />
         <Route path='*' element={<PageNotFound />} />
       </Route>
     )
