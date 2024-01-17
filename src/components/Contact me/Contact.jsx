@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Confetti from "react-confetti";
 import { useForm } from 'react-hook-form';
 import axios from "axios";
-
+import { Toaster, toast } from "react-hot-toast";
 
 
 const Contact = () => {
@@ -17,7 +17,7 @@ const Contact = () => {
     setNum1(numericValue.slice(0, limit1));
   };
   const onSubmit = async (data) => {
-
+    
     const options1 = {
       method: 'POST',
       url: 'https://send-mail-serverless.p.rapidapi.com/send',
@@ -44,8 +44,9 @@ const Contact = () => {
         },
         subject: 'Portfolio Contact-Form',
         content: [
-          { type: 'text/html',
-          value: `<b>Lead from Your Portfolio</b><br><br>
+          {
+            type: 'text/html',
+            value: `<b>Lead from Your Portfolio</b><br><br>
           <p>
               <b>Name: </b> ${data.Name}<br>
               <b>Email: </b> ${data.Email}<br>
@@ -86,8 +87,9 @@ const Contact = () => {
         },
         subject: 'Thank You for Reaching Out!',
         content: [
-          { type: 'text/html',
-          value: `<b>Hello </b>${data.Name}<br><br>
+          {
+            type: 'text/html',
+            value: `<b>Hello </b>${data.Name}<br><br>
           <p>
           Thanks a lot for getting in touch! I've received your message,
           and I'll get back to you as soon as I can.<br><br>
@@ -131,12 +133,14 @@ const Contact = () => {
         ]);
         // console.log(response1.data);
         // console.log(response2.data);
+        toast.success('Submitted Successfully!')
         console.log(data)
         setShowConfetti(true);
         reset();
         setNum1("");
       } catch (error) {
         console.error(error);
+        toast.error('Try again')
       }
     }
 
@@ -152,10 +156,10 @@ const Contact = () => {
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d139648.62438514814!2d77.52457850001586!3d12.963341722482944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1704629169066!5m2!1sen!2sin"
             width="600" height="450"
             className='rounded-lg max-w-[90%] mobile:h-auto max-h-[80]
-             m-auto  animate__animated animate__slideInLeft'
+             m-auto  animate__animated animate__slideInLeft form'
             loading="lazy"></iframe>
         </div>
-        <div className="mobile:w-[100%]  animate__animated animate__slideInRight  ">
+        <div className="mobile:w-[100%]  animate__animated animate__slideInRight form p-5">
           <div className="text-center font-bold text-5xl mobile:mb-0 mb-10 text-sky-500">
             <h1 >Contact...</h1>
           </div>
@@ -199,12 +203,13 @@ const Contact = () => {
               <div className="absolute z-10 w-24 h-24 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-sky-600 delay-150 group-hover:delay-200"></div>
               <div className="absolute z-10 w-16 h-16 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-sky-500 delay-150 group-hover:delay-300"></div>
               <p className="z-10">Submit</p>
-            </button>          </form>
+            </button>
+          </form>
         </div>
       </div>
 
 
-
+      <Toaster />
 
 
 

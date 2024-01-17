@@ -4,7 +4,7 @@ const PageNotFound = () => {
   return (
     <>
    <div>
-    <img src="/404/notfound.jpg" alt="" className='w-full h-[100dvh] mt-0'/>
+    <img src="/images/notfound.jpg" alt="" className='w-full h-[100dvh] mt-0'/>
    </div>
     </>
   )

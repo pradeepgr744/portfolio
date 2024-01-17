@@ -18,7 +18,7 @@ const Header = () => {
       <nav className="backdrop-blur-sm bg-white/30  pt-2 pb-2 mb-0">
         <div className="flex flex-wrap justify-between items-center mx-auto lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%]">
           <Link to="" className="flex items-center">
-            <img src="src/assets/icon1.jpg" className='p-0 w-12 rounded-full' />
+            <img src="/images/icon1.jpg" className='p-0 w-12 rounded-full' />
             {/* <h1 className='font-bold font-sans ml-2'>PRADEEP</h1> */}
           </Link>
 
@@ -69,7 +69,7 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
-                  to="/About"
+                  to="/about"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-500" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-700 lg:p-0`
                   }
@@ -81,7 +81,19 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
-                  to="/Projects"
+                  to="/blog"
+                  className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-500" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-700 lg:p-0`
+                  }
+                  
+                  title='Projects'
+                >
+                  Blog
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/projects"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-blue-500" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-blue-700 lg:p-0`
                   }
@@ -122,9 +134,10 @@ const Header = () => {
             className="flex flex-col gap-2 w-80 rounded-lg backdrop-blur-3xl bg-white/30 shadow-xl absolute top-[120%] "
           >
             <div><NavLink to="" ><Option setOpen1={setOpen1} Icon={FiHome} text="Home" /></NavLink></div>
-            <div><NavLink to="/About"><Option setOpen1={setOpen1} Icon={FiUser} text="About" /></NavLink></div>
-            <div><NavLink to="/Projects"><Option setOpen1={setOpen1} Icon={FiMail} text="Project" /></NavLink></div>
-            <div><NavLink to="/Contact"><Option setOpen1={setOpen1} Icon={FiBriefcase} text="Contact Me" /></NavLink></div>
+            <div><NavLink to="/about"><Option setOpen1={setOpen1} Icon={FiUser} text="About" /></NavLink></div>
+            <div><NavLink to="/blog"><Option setOpen1={setOpen1} Icon={FiUser} text="Blog" /></NavLink></div>
+            <div><NavLink to="/projects"><Option setOpen1={setOpen1} Icon={FiMail} text="Project" /></NavLink></div>
+            <div><NavLink to="/contact"><Option setOpen1={setOpen1} Icon={FiBriefcase} text="Contact Me" /></NavLink></div>
             <div><StaggeredDropDown /></div>
           </motion.ul>
         </motion.div>

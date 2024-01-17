@@ -40,7 +40,7 @@ const Home = () => {
         <div className="flex-1 w-0 p-4">
           <div className="flex items-start">
             <div className="flex-shrink-0 pt-0.5">
-              <img className="h-10 w-10 rounded-full" src="src/assets/img1.jpg" alt="" />
+              <img className="h-10 w-10 rounded-full" src="/images/img1.jpg" alt="" />
             </div>
             <div className="ml-3 flex-1">
               <h1 className="text-sm font-medium text-gray-900 flex justify-between">
@@ -51,17 +51,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* <div className="flex border-l border-gray-200">
-           <button
-             onClick={() => toast.dismiss(t.id)}
-             className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-           >
-             Close
-           </button>
-         </div> */}
+     
       </div>
     ), {
-      duration: 2000, // Set the duration to 1000 milliseconds (1 second)
+      duration: 2000, 
     });
   }
 
@@ -69,7 +62,9 @@ const Home = () => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-
+function hello() {
+  toast('Here is your toast.')
+}
 
   return (
     <>
@@ -77,7 +72,7 @@ const Home = () => {
         <div className=' lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%] m-auto h-[100dvh]'>
           <div className='md:w-[75%] sm:w-[100%] mobile:w-[100%] mobile:m-auto mb-28'>
             <div className='flex justify-between'>
-              <img src="src/assets/img2.jpg" alt="" className='w-[150px] mobile:w-[120px] rounded-full m-3 mobile:mt-20 mt-10 mb-10 shadow-2xl shadow-[#fdb724]  animate__animated animate__fadeInDown' />
+              <img src="/images/img2.jpg" alt="" className='w-[150px] mobile:w-[120px] rounded-full m-3 mobile:mt-20 mt-10 mb-10 shadow-2xl shadow-[#fdb724]  animate__animated animate__fadeInDown' />
               <div className="tooltip-container mt-48 mr-20">
                 <div className="tooltip">
                   <div className="text">Save Trees</div>
@@ -138,7 +133,7 @@ const Home = () => {
 
 
         <div ref={ref}>
-          <button onClick={notify}>Make me a toast</button>
+          <button onClick={hello}>Make me a toast</button>
           <Toaster />
 
         </div>

@@ -34,14 +34,14 @@ const About = () => {
       </Canvas>
 
       {isCanvasLoaded && (
-        <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-center pointer-events-none">
-          <h1 className="text-5xl font-semibold text-white mb-6 animate__animated animate__fadeInDown">About Me</h1>
+        <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-center ">
+          <h1 className="text-5xl font-bold text-white mb-6 animate__animated animate__fadeInDown">About <span className="text-[#fdb724]">Me</span></h1>
         <p className="max-w-prose text-white animate__animated animate__fadeIn animate__delay-1s">Passionate FullStack Developer from Bengaluru, India. Turning ideas into code and creating digital experiences.</p>
-        <p className="text-white mt-2"><strong className="text-yellow-300 font-semibold">Skills:</strong> HTML, CSS, JavaScript, MERN Stack, Java</p>
+        <p className="text-white mt-2"><strong className="text-yellow-300 font-semibold">Skills:</strong> HTML, CSS, tailwind, JavaScript, MERN Stack, Java</p>
         <p className="text-white mt-2"><strong className="text-yellow-300 font-semibold">Projects:</strong> YouTube Clone, Weather App, Video Streaming</p>
         <p className="text-white mt-2 mb-5"><strong className="text-yellow-300 font-semibold ">Contact:</strong> 
-            <a href="mailto:pradeepgr744@gmail.com" className="text-yellow-300 hover:text-white transition duration-300 pointer-events-auto"> pradeepgr744@gmail.com</a> | 
-            <a href="https://github.com/pradeepgr744" className="text-yellow-300 hover:text-white transition duration-300 pointer-events-auto"> GitHub</a>
+            <a href="tel:+91 9739640989" className="text-yellow-300 hover:text-white transition duration-300 pointer-events-auto"> +91 9739640989</a> | 
+            <a href="mailto:pradeepgr744@gmail.com" className="text-yellow-300 hover:text-white transition duration-300 pointer-events-auto"> pradeepgr744@gmail.com</a>
         </p>
         
         <Link to="/contact" className="bg-white text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 mt-4 rounded-full transition duration-300 hover-scale  font-semibold pointer-events-auto">Let's Connect</Link>

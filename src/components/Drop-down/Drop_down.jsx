@@ -28,7 +28,7 @@ const StaggeredDropDown = () => {
                 >
                     <NavLink to="/Resume">
                         <Option setOpen={setOpen} Icon={FiFile} text="Open" /></NavLink>
-                    <a href='src/assets/Resume-pradeep.pdf'
+                    <a href='/images/Resume-pradeep.pdf'
                         download="Pradeep-Resume.pdf"
                         target="_blank"
                         rel="noreferrer"

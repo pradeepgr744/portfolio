@@ -9,7 +9,7 @@ const Footer = () => {
 
       <section className='bg-[#1A1A1A] text-[#AAA] '>
         <div>
-          <img src="src/assets/icon3.jpg" alt="" width={150} height={80}  className='rounded-xl  m-auto pt-5'/>
+          <img src="/images/icon3.jpg" alt="" width={150} height={80}  className='rounded-xl  m-auto pt-5'/>
         </div>
         <section className='lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%] m-auto '>
           <div className='flex md:flex-row  mobile:flex-col sm:flex-col justify-around mobile:text-center sm:text-center w-[80%] m-auto mb-10 pt-10'>

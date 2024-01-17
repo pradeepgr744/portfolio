@@ -10,8 +10,8 @@ body {
     /* font-family: 'Open Sans',  sans-serif; */
     @font-face {
         font-family: "Inter";
-        src: url('../src/assets/Inter-Regular.woff2') format('woff2'),
-            url('../src/assets/Inter-Regular.woff') format('woff');
+        src: url('..//images/Inter-Regular.woff2') format('woff2'),
+            url('..//images/Inter-Regular.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
@@ -19,16 +19,16 @@ body {
 
 @font-face {
     font-family: "Open Sans";
-    src: url('../src/assets/OpenSans-Regular.woff2') format('woff2'),
-        url('../src/assets/OpenSans-Regular.woff') format('woff');
+    src: url('..//images/OpenSans-Regular.woff2') format('woff2'),
+        url('..//images/OpenSans-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Inter";
-    src: url('../src/assets/Inter-Regular.woff2') format('woff2'),
-        url('../src/assets/Inter-Regular.woff') format('woff');
+    src: url('..//images/Inter-Regular.woff2') format('woff2'),
+        url('..//images/Inter-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -295,3 +295,10 @@ rotate: z 20deg;
     transform: scale(1.05);
 }
 
+
+.form{
+    border-radius: 25px;
+    background: linear-gradient(145deg, #ffffff, #e6ddd7);
+    box-shadow:  50px 50px 100px #666260,
+                 -50px -50px 100px #ffffff;
+}

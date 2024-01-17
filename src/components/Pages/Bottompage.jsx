@@ -9,19 +9,19 @@ export const Bottompage = () => {
         <Link
           heading="About"
           subheading="Learn what we do here"
-          imgSrc="/imgs/random/11.jpg"
+          imgSrc="/images/aboutimg.png"
           href="#"
         />
         <Link
           heading="Portfolio"
           subheading="Our work speaks for itself"
-          imgSrc="src/assets/portfolio.png"
+          imgSrc="/images/portfolio.png"
           href="#"
         />
         <Link
           heading="Careers"
           subheading="We want cool people"
-          imgSrc="/imgs/random/5.jpg"
+          imgSrc="/images/work.svg"
           href="#"
         />
         <Link

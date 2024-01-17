@@ -7,6 +7,7 @@ import Projects from './components/Projects/Projects.jsx'
 import Contact from './components/Contact me/Contact.jsx'
 import Resume from './components/Resume/Resume.jsx'
 import PageNotFound from './components/PageNotFound/PageNotFound.jsx'
+import Blog from './components/blog/Blog.jsx'
 
 const App = () => {
   const router = createBrowserRouter(
@@ -17,6 +18,7 @@ const App = () => {
         <Route path='/projects' element={<Projects />} />
         <Route path='/resume' element={<Resume />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/blog' element={<Blog />} />
         <Route path='*' element={<PageNotFound />} />
       </Route>
     )
