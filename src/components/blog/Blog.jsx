@@ -7,7 +7,7 @@ const myProjects = [
     "title": "HTML",
     "tools": "skeleton",
     "duration": "10-days",
-    "link": "/htmldoc"
+    "link": "https://htmlnotes-git-main-pradeepgr744s-projects.vercel.app/"
   },
   {
     "image": "https://assets.materialup.com/uploads/65010d00-ceba-4bb6-879e-af5ae01ea17d/attachment.png",
