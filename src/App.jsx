@@ -8,6 +8,8 @@ import Contact from './components/Contact me/Contact.jsx'
 import Resume from './components/Resume/Resume.jsx'
 import PageNotFound from './components/PageNotFound/PageNotFound.jsx'
 import Blog from './components/blog/Blog.jsx'
+import Model from './components/Model/Model.jsx'
+import Htmldoc from './components/blog/htmldoc.jsx'
 
 const App = () => {
   const router = createBrowserRouter(
@@ -19,6 +21,8 @@ const App = () => {
         <Route path='/resume' element={<Resume />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/3dmodel' element={<Model />} />
+        <Route path='/htmldoc' element={<Htmldoc />} />
         <Route path='*' element={<PageNotFound />} />
       </Route>
     )
