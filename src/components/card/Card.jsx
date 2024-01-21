@@ -7,7 +7,7 @@ function Card({Projects}) {
   return (
     <>
     
-    <Link to={Projects?.link} target='_blank'>
+    <Link to={Projects?.link}>
       <div
         className="card_design w-[273px] m-2 rounded-xl border hover:w-[305px] cursor-pointer">
 
