@@ -1,11 +1,32 @@
-import React from 'react'
+import React, { useEffect, useRef } from "react"
+import { Application } from '@splinetool/runtime';
 import './blog.css'
+import { Helmet } from 'react-helmet';
 
 const Html = () => {
+    const canvasRef = useRef(null);
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        const app = new Application(canvas);
+
+        // Load the Spline scene when the component mounts
+        app.load('https://prod.spline.design/RGOEyZs80NyOGRAh/scene.splinecode');
+
+        // Clean up resources when the component unmounts
+        return () => {
+            // Perform any necessary cleanup here, e.g., stopping animations or releasing resources
+        };
+    }, []); // Empty dependency array to ensure the effect runs only once on mount
+
     return (
         <>
+            <Helmet>
+                <title>HTML Notes</title>
+                <link rel="icon" type="image/svg+xml" href="https://assets.materialup.com/uploads/a8b481f3-cb72-43e1-88b0-ebc47fb9010c/attachment.png" />
+            </Helmet>
             <div className='max-w-[80%] m-auto text-2xl'>
-                <div className='flex h-[92dvh] items-center text-9xl'>
+                <div className='flex h-[100dvh] items-center text-9xl'>
                     <div>
                         <h2 className='head_text font-semibold'>
                             HTML
@@ -16,7 +37,7 @@ const Html = () => {
                     </div>
                 </div>
                 <div>
-                    <p>Scripting Lanaguage</p>
+                    <p>Markup Lanaguage</p>
                     <p>HTML (HyperText Markup Language) was created by Tim Berners-Lee in 1991 as a standard for creating web pages</p>
                     <p>HTML forms the backbone of web content</p>
                     <p className='text-center'>installation of VS</p>
@@ -86,6 +107,8 @@ const Html = () => {
                         <li><code>&lt;section&gt;</code>: Section.</li>
                         <li><code>&lt;nav&gt;</code>: Navigation.</li>
                         <li><code>&lt;aside&gt;</code>: Sidebar content.</li>
+            <img src="https://media.licdn.com/dms/image/D4E12AQGuR3Fo5vHW9A/article-cover_image-shrink_720_1280/0/1691429662154?e=2147483647&v=beta&t=_vo7AXuXOCAsDO_Y4BikTZtORNJoL9zbTd9WeiLCZz4"alt=""/>
+            
                     </ol >
                     <h1 className='mt-7 mb-2 font-semibold'>Pared and Unpared Tags</h1>
                     starting tag and ending tag
@@ -107,6 +130,15 @@ const Html = () => {
                 </section >
 
             </div >
+            <div className="flex justify-center">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DE6ETblMjlNqG7EB7hsSNITN1KgKgcn7zb04DP1mcUaDCwhJ" alt=""
+                />
+                <img src="https://www.mixamo.com/api/v1/characters/7f3f4e32-2b70-4c69-9a3d-0bdac6188241/assets/thumbnails/static.png" alt="" />
+            </div>
+            <div className='bg-gray-950'>
+
+                <canvas ref={canvasRef} id="canvas3d" />
+            </div>
         </>
     )
 }

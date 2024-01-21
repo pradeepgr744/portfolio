@@ -10,6 +10,7 @@ import PageNotFound from './components/PageNotFound/PageNotFound.jsx'
 import Blog from './components/blog/Blog.jsx'
 import Model from './components/Model/Model.jsx'
 import Html from './components/blog/Html.jsx'
+import Css from './components/blog/Css.jsx'
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route path='/blog' element={<Blog />} />
         <Route path='/3dmodel' element={<Model />} />
         <Route path='/htmldoc' element={<Html />} />
+        <Route path='/cssdoc' element={<Css />} />
         <Route path='*' element={<PageNotFound />} />
       </Route>
     )

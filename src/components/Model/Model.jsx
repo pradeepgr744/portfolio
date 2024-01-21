@@ -10,7 +10,7 @@ const Model = () => {
     const app = new Application(canvas);
 
     // Load the Spline scene when the component mounts
-    app.load('https://prod.spline.design/fYXhrRjGYpOd51bm/scene.splinecode');
+    app.load('https://prod.spline.design/RGOEyZs80NyOGRAh/scene.splinecode');
 
     // Clean up resources when the component unmounts
     return () => {
