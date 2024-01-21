@@ -133,13 +133,11 @@ function hello() {
 
 
         <div ref={ref}>
-          <button onClick={hello}>Make me a toast</button>
+          <button onClick={hello}>Hlo</button>
           <Toaster />
 
         </div>
-        <button className='noselect red'>
-          {date.getHours()}
-        </button>
+        
       </section>
 
 

@@ -62,7 +62,14 @@ const myProjects = [
     image: "https://pbs.twimg.com/profile_images/1674799535665684482/SgGTyzXN_400x400.png",
     title: "Cloudnary",
     tools: "Image&Video",
-    duration: "5-Month",
+    duration: "2-days",
+    link: "#"
+  },
+  {
+    image: "/images/question.jpg",
+    title: "Interview",
+    tools: "Question%Answers",
+    duration: "1-Month",
     link: "#"
   }
 ]
