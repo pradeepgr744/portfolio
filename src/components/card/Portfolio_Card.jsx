@@ -3,12 +3,15 @@ import "./Portfolio_Card.css"
 
 const Portfolio_Card = () => {
     return (
-        <div className="card">
+        <div 
+        className="group hover:-rotate-0 [transform:rotate3d(1_,-1,_1,_15deg)] duration-500 overflow-hidden rounded-lg hover:shadow-lg [box-shadow:12px_12px_0px_0px_#0d0d0d] backdrop-filter backdrop-blur-md border border-neutral-600 transform transition-transform hover:scale-105 hover:rotate+3"
+        >
+        <div className="card h-[270px] w-[220px] ">
             <div className="bg-[#ff5858] h-[70px] items-center flex m-auto">
                 <div className="w-[38%]">
                     <img src="/images/img2.jpg" alt="" className='w-[50px] m-auto rounded-[10px]' />
                 </div>
-                <div className='text-white w-auto'>
+                <div className='text-white w-auto px-2'>
                     <p className="font-semibold text-sm bg-[#414141] px-1 rounded-md w-fit mb-1">Pradeep</p>
                     <p className="text-xs bg-[#414141] px-1 rounded-md w-fit">Full-Stack Developer</p>
                 </div>
@@ -19,9 +22,6 @@ const Portfolio_Card = () => {
                 <p>I am Pradeep</p>
                 <p>I been working as Full-Stack Developer(MERN-Stack)</p>
                 <p>Believer in the concept of karma.</p>
-
-
-
             </div>
 
             <div className="Social_Media flex justify-around my-3">
@@ -49,6 +49,7 @@ const Portfolio_Card = () => {
                 </a>
             </div>
 
+        </div>
         </div>
     )
 }

@@ -10,24 +10,24 @@ export const Bottompage = () => {
           heading="About"
           subheading="Learn what we do here"
           imgSrc="/images/aboutimg.png"
-          href="#"
+          href="/about"
         />
         <Link
           heading="Portfolio"
           subheading="Our work speaks for itself"
           imgSrc="/images/portfolio.png"
-          href="#"
+          href="/"
         />
         <Link
           heading="Careers"
           subheading="We want cool people"
           imgSrc="/images/work.svg"
-          href="#"
+          href="https://www.safepro.tech"
         />
         <Link
           heading="Fun"
-          subheading="Incase you're bored"
-          imgSrc="/imgs/random/10.jpg"
+          subheading=""
+          imgSrc=""
           href="#"
         />
       </div>

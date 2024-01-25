@@ -1,11 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
 
   return (
     <>
-
-
 
       <section className='bg-[#1A1A1A] text-[#AAA] '>
         <div>
@@ -16,10 +15,10 @@ const Footer = () => {
             <div className=''>
               <h1 className='text-2xl font-semibold'>Quick Link</h1>
               <div className='text-md leading-[2.2] mt-2'>
-                <p>About</p>
-                <p>Portfolio</p>
-                <p>Resume</p>
-                <p>Contact</p>
+                <Link to="/about"><p>About</p></Link>
+                <Link to=""><p>Portfolio</p></Link>
+                <Link to="/resume"><p>Resume</p></Link>
+                <Link to="/contact"><p>Contact</p></Link>
               </div>
             </div>
             <div>

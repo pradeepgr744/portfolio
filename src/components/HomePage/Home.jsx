@@ -3,8 +3,53 @@ import { Toaster, toast } from 'react-hot-toast';
 import { TypeAnimation } from 'react-type-animation';
 import 'animate.css';
 import { Bottompage } from '../Pages/Bottompage';
+import Portfolio_Card from '../card/Portfolio_Card';
+import Card from '../card/Card';
+import { NavLink } from 'react-router-dom';
 
-
+const myProjects = [
+  {
+    "image": "/images/Youtube.svg",
+    "title": "Youtube Clone",
+    "tools": "Reactjs,Rapid Api,Tailwind",
+    "duration": "1-Month",
+    "link": "https://youtube-clone-teal-beta.vercel.app/"
+  },
+  {
+    "image": "images/chatbot.png",
+    "title": "Chat-Bot",
+    "tools": "Reactjs,Gemeni API,Tailwind",
+    "duration": "15-days",
+    "link": "https://chat-cpphymuuj-pradeepgr744s-projects.vercel.app/"
+  },
+  {
+    "image": "https://static01.nyt.com/images/2014/05/25/magazine/25wmt/mag-25WMT-t_CA0-superJumbo.jpg",
+    "title": "Weaather-App",
+    "tools": "HTML,Javascript,bootstrap",
+    "duration": "15days",
+    "link": "https://weather-sigma-beryl.vercel.app/"
+  }, {
+    image: "https://assets.materialup.com/uploads/a8b481f3-cb72-43e1-88b0-ebc47fb9010c/attachment.png",
+    title: "HTML",
+    tools: "skeleton",
+    duration: "10-days",
+    link: "/htmldoc"
+  },
+  {
+    image: "https://assets.materialup.com/uploads/65010d00-ceba-4bb6-879e-af5ae01ea17d/attachment.png",
+    title: "CSS",
+    tools: "Body",
+    duration: "20-days",
+    link: "/cssdoc"
+  },
+  {
+    image: "https://cdn3d.iconscout.com/3d/free/preview/free-js-file-10134903-8248662.png?f=webp&h=700",
+    title: "JavaScript",
+    tools: "Body Moment",
+    duration: "1-Month",
+    link: "#"
+  }
+]
 
 const Home = () => {
   const ref = useRef(null);
@@ -51,10 +96,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-     
+
       </div>
     ), {
-      duration: 2000, 
+      duration: 2000,
     });
   }
 
@@ -62,15 +107,14 @@ const Home = () => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-function hello() {
-  toast('Here is your toast.')
-}
-
+  function hello() {
+    toast('Here is your toast.')
+  }
   return (
     <>
       <section>
         <div className=' lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%] m-auto h-[100dvh]'>
-          <div className='md:w-[75%] sm:w-[100%] mobile:w-[100%] mobile:m-auto mb-28'>
+          <div className='md:w-[75%] sm:w-[100%] mobile:w-[100%] mobile:m-auto'>
             <div className='flex justify-between'>
               <img src="/images/img2.jpg" alt="" className='w-[150px] mobile:w-[120px] rounded-full m-3 mobile:mt-20 mt-10 mb-10 shadow-2xl shadow-[#fdb724]  animate__animated animate__fadeInDown' />
               <div className="tooltip-container mt-48 mr-20">
@@ -131,13 +175,51 @@ function hello() {
           </div>
         </div>
 
-
-        <div ref={ref}>
-          <button onClick={hello}>Hlo</button>
-          <Toaster />
+        <div className='w-full flex flex-wrap justify-center m-auto bg-transparent gap-5' ref={ref}>
+          {myProjects.slice(0, 3).map((d, i) => (
+            <Card Projects={d} key={i} />
+          ))}
 
         </div>
-        
+        <NavLink to="/projects"><button
+          class="rounded-lg m-auto my-10 relative w-36 h-10 cursor-pointer flex items-center border border-none bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% group hoverbg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% active:bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
+        >
+          <span
+            className="text-gray-200 font-semibold ml-5 transform group-hover:translate-x-32 transition-all duration-300"
+          >View More</span>
+          <span
+            class="absolute right-0 h-full w-10 rounded-lg bg-transparent flex items-center justify-center transform group-hover:translate-x-0 group-hover:w-full transition-all duration-300"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512">
+              <path fill="#fff5ef" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>
+          </span>
+        </button></NavLink>
+
+        <div className='w-full flex flex-wrap justify-center m-auto mt-28 bg-transparent gap-5'>
+          {myProjects.slice(3).map((d, i) => (
+            <Card Projects={d} key={i} />
+          ))}
+
+        </div>
+        <NavLink to="/blog">
+          <button
+            class="rounded-lg m-auto my-10 mb-28 relative w-36 h-10 cursor-pointer flex items-center border border-none bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% group hoverbg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% active:bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
+          >
+            <span
+              className="text-gray-200 font-semibold ml-5 transform group-hover:translate-x-32 transition-all duration-300 "
+            >View More</span>
+            <span
+              class="absolute right-0 h-full w-10 rounded-lg bg-transparent flex items-center justify-center transform group-hover:translate-x-0 group-hover:w-full transition-all duration-300"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512">
+                <path fill="#fff5ef" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>
+            </span>
+          </button></NavLink>
+
+        <div className="flex flex justify-center m-10">
+          <Portfolio_Card />
+        </div>
+
       </section>
 
 

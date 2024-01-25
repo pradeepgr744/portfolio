@@ -77,7 +77,7 @@ const myProjects = [
 const Blog = () => {
   return (
     <>
-      <div className='w-[900px] flex flex-wrap justify-center m-auto bg-gray-100'>
+      <div className='w-[80%] flex flex-wrap justify-center m-auto my-10 bg-transparent gap-5'>
         {myProjects.map((d, i) => (
           <Card Projects={d} key={i} />
         ))}

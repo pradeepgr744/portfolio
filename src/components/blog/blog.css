@@ -3,3 +3,26 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+
+  @media screen and (min-width:561px) and (max-width:1080px) {
+  .head_text{
+    width: 90%;
+    font-size: 100px;
+  }
+  }
+
+  @media screen and (min-width:260px) and (max-width:560px) {
+    .head_text{
+      width: 100%;
+      font-size: 70px;
+    }
+    .font-extralight{
+      font-size: 50px;
+    }
+    .content_section, .intro{
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  }

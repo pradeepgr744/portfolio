@@ -25,7 +25,7 @@ const Html = () => {
                 <title>HTML Notes</title>
                 <link rel="icon" type="image/svg+xml" href="https://assets.materialup.com/uploads/a8b481f3-cb72-43e1-88b0-ebc47fb9010c/attachment.png" />
             </Helmet>
-            <div className='max-w-[80%] m-auto text-2xl'>
+            <div className='w-[80%] mobile:w-[90%] m-auto text-2xl'>
                 <div className='flex h-[100dvh] items-center text-9xl'>
                     <div>
                         <h2 className='head_text font-semibold'>
@@ -36,7 +36,7 @@ const Html = () => {
                         </h1>
                     </div>
                 </div>
-                <div>
+                <div className="intro">
                     <p>Markup Lanaguage</p>
                     <p>HTML (HyperText Markup Language) was created by Tim Berners-Lee in 1991 as a standard for creating web pages</p>
                     <p>HTML forms the backbone of web content</p>
@@ -44,7 +44,7 @@ const Html = () => {
                     <p className='text-center'>HTMl structure</p>
                 </div>
 
-                <section className='mt-10'>
+                <section className='mt-10 content_section'>
                     <h1 className='mt-7 mb-2 font-semibold'>Document Structure Tags</h1>
                     <ol className='list-decimal'>
                         <li><code>&lt;!DOCTYPE html&gt;</code>: Specifies the document type.</li>
@@ -130,14 +130,14 @@ const Html = () => {
                 </section >
 
             </div >
-            <div className="flex justify-center">
+            <div className="flex justify-center mobile:flex-col">
                 <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DE6ETblMjlNqG7EB7hsSNITN1KgKgcn7zb04DP1mcUaDCwhJ" alt=""
                 />
                 <img src="https://www.mixamo.com/api/v1/characters/7f3f4e32-2b70-4c69-9a3d-0bdac6188241/assets/thumbnails/static.png" alt="" />
             </div>
             <div className='bg-gray-950'>
 
-                <canvas ref={canvasRef} id="canvas3d" />
+                <canvas ref={canvasRef} id="canvas3d" height={420}/>
             </div>
         </>
     )

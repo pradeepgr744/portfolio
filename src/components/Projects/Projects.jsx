@@ -41,7 +41,7 @@ const myProjects = [
     "link":"https://todo-list-pradeepgr744s-projects.vercel.app/"
   },
   {
-    "image": "https://scontent.fblr8-1.fna.fbcdn.net/v/t39.30808-6/258713769_7448510961841588_2864726168693929917_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=tyVuzYDvK2kAX_tDo22&_nc_ht=scontent.fblr8-1.fna&oh=00_AfCktpahKQSJ0Dz5n5sBZpEATczu9Ju6pmA-h3EU9of6BA&oe=65AD927F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Zomato_logo.png",
     "title": "Zomato Home-Page Clone",
     "tools": "Reactjs,zomato home-page json,Tailwind",
     "duration": "15days",
@@ -69,11 +69,7 @@ const Projects = () => {
 
   return (
     <>
-      <div className="flex justify-between m-10 bg-gray-100">
-        <Portfolio_Card />
-      
-      </div>
-      <div className='w-[900px] flex flex-wrap justify-center m-auto bg-gray-100'>
+      <div className='w-[80%] flex flex-wrap justify-center m-auto my-10 bg-transparent gap-5'>
         {myProjects.map((d, i) => (
           <Card Projects={d} key={i}/>
         ))}

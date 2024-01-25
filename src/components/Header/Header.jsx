@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import StaggeredDropDown from '../Drop-down/Drop_down';
 import { FiHome, FiUser, FiMail, FiBriefcase } from "react-icons/fi";
@@ -10,18 +10,58 @@ const Header = () => {
   const genericHamburgerLine = `h-1 w-8 my-1 rounded-full bg-black transition ease transform duration-300`;
 
   const [open1, setOpen1] = useState(false);
+  const [toggle, settoggle] = useState(false)
 
 
+  useEffect(() => {
+    if (toggle) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [toggle]);
 
   return (
-    <header className="shadow sticky z-50 top-0 h-auto backdrop-blur-xl ">
+    <header className={`shadow sticky z-50 top-0 h-auto backdrop-blur-xl`}>
       <nav className="backdrop-blur-sm bg-white/30  pt-2 pb-2 mb-0">
         <div className="flex flex-wrap justify-between items-center mx-auto lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%]">
           <Link to="" className="flex items-center">
             <img src="/images/icon1.jpg" className='p-0 w-12 rounded-full' alt="" />
             {/* <h1 className='font-bold font-sans ml-2'>PRADEEP</h1> */}
           </Link>
-
+          <label className='bb8-toggle md:hidden'>
+      <input className="bb8-toggle__checkbox " onClick={()=>settoggle(!toggle)} type="checkbox"/>
+      <div className="bb8-toggle__container">
+        <div className="bb8-toggle__scenery">
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="tatto-1"></div>
+          <div className="tatto-2"></div>
+          <div className="gomrassen"></div>
+          <div className="hermes"></div>
+          <div className="chenini"></div>
+          <div className="bb8-toggle__cloud"></div>
+          <div className="bb8-toggle__cloud"></div>
+          <div className="bb8-toggle__cloud"></div>
+        </div>
+        <div className="bb8">
+          <div className="bb8__head-container">
+            <div className="bb8__antenna"></div>
+            <div className="bb8__antenna"></div>
+            <div className="bb8__head"></div>
+          </div>
+          <div className="bb8__body"></div>
+        </div>
+        <div className="artificial__hidden">
+          <div className="bb8__shadow"></div>
+        </div>
+      </div>
+    </label>
 
           <button
 
@@ -117,6 +157,41 @@ const Header = () => {
               </li>
               <li>
                 <StaggeredDropDown />
+              </li>
+              <li>
+              <label className="bb8-toggle ">
+      <input className="bb8-toggle__checkbox " onClick={()=>settoggle(!toggle)} type="checkbox"/>
+      <div className="bb8-toggle__container">
+        <div className="bb8-toggle__scenery">
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="bb8-toggle__star"></div>
+          <div className="tatto-1"></div>
+          <div className="tatto-2"></div>
+          <div className="gomrassen"></div>
+          <div className="hermes"></div>
+          <div className="chenini"></div>
+          <div className="bb8-toggle__cloud"></div>
+          <div className="bb8-toggle__cloud"></div>
+          <div className="bb8-toggle__cloud"></div>
+        </div>
+        <div className="bb8">
+          <div className="bb8__head-container">
+            <div className="bb8__antenna"></div>
+            <div className="bb8__antenna"></div>
+            <div className="bb8__head"></div>
+          </div>
+          <div className="bb8__body"></div>
+        </div>
+        <div className="artificial__hidden">
+          <div className="bb8__shadow"></div>
+        </div>
+      </div>
+    </label>
               </li>
             </ul>
           </div>
