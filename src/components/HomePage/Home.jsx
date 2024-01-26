@@ -220,6 +220,8 @@ const Home = () => {
           <Portfolio_Card />
         </div>
 
+        <Toaster />
+
       </section>
 
 
