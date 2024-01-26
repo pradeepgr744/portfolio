@@ -57,11 +57,14 @@ const Home = () => {
   const notificationDisplayed = useRef(false);
 
   useEffect(() => {
-    setDate(new Date());
-    if (!notificationDisplayed.current) {
-      notify();
-      notificationDisplayed.current = true;
-    }
+    const notificationTimeout = setTimeout(() => {
+      setDate(new Date());
+      if (!notificationDisplayed.current) {
+        notify();
+        notificationDisplayed.current = true;
+      }
+    }, 1000)  
+    return () => clearTimeout(notificationTimeout);
   }, []);
 
   const checkGreeting = () => {

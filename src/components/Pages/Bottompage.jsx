@@ -20,15 +20,15 @@ export const Bottompage = () => {
         />
         <Link
           heading="Careers"
-          subheading="We want cool people"
+          subheading=""
           imgSrc="/images/work.svg"
-          href="https://www.safepro.tech"
+          href="https://www.safepro.tech/"
         />
         <Link
-          heading="Fun"
-          subheading=""
-          imgSrc=""
-          href="#"
+          heading="Contact_Form"
+          subheading="Let's get Connected"
+          imgSrc="/images/contect_form.png"
+          href="/contact"
         />
       </div>
     </section>

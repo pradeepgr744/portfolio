@@ -5,6 +5,7 @@ import axios from "axios";
 import { Toaster, toast } from "react-hot-toast";
 
 
+
 const Contact = () => {
   const [showConfetti, setShowConfetti] = useState(false);
   const confettiRef = useRef();
@@ -151,6 +152,7 @@ const Contact = () => {
 
   return (
     <>
+    
       <div className="lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%] m-auto flex justify-around md:flex-row  mobile:flex-col sm:flex-col lg:h-[92dvh] mobile:h-[92dvh] items-center">
         <div>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d139648.62438514814!2d77.52457850001586!3d12.963341722482944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1704629169066!5m2!1sen!2sin"
@@ -191,7 +193,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="relative z-0 w-full mb-5 group">
-              <textarea type="text" name="floating_email" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required
+              <textarea type="text" name="floating_email" id="floating_email" className="resize-none block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required
                 {...register("Message")}
               />
               <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Message</label>
