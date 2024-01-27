@@ -77,7 +77,7 @@ const myProjects = [
 const Blog = () => {
   return (
     <>
-      <div className='w-[80%] flex flex-wrap justify-center m-auto my-10 bg-transparent gap-5'>
+      <div className='w-[80%] flex flex-wrap justify-center m-auto my-10 bg-transparent gap-5 transition-all ease-in-out duration-1000 animate__animated animate__slideInUp'>
         {myProjects.map((d, i) => (
           <Card Projects={d} key={i} />
         ))}
