@@ -11,6 +11,7 @@ import Blog from './components/blog/Blog.jsx'
 import Model from './components/Model/Model.jsx'
 import Html from './components/blog/Html.jsx'
 import Css from './components/blog/Css.jsx'
+import Js from './components/blog/Js.jsx'
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/3dmodel' element={<Model />} />
         <Route path='/htmldoc' element={<Html />} />
         <Route path='/cssdoc' element={<Css />} />
+        <Route path='/js' element={<Js />} />
         <Route path='*' element={<PageNotFound />} />
       </Route>
     )

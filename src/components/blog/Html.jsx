@@ -26,7 +26,7 @@ const Html = () => {
                 <link rel="icon" type="image/svg+xml" href="https://assets.materialup.com/uploads/a8b481f3-cb72-43e1-88b0-ebc47fb9010c/attachment.png" />
             </Helmet>
             <div className='w-[80%] mobile:w-[90%] m-auto text-2xl'>
-                <div className='flex h-[100dvh] items-center text-9xl'>
+                <div className='flex h-[100dvh] items-center text-9xl animate__animated animate__slideInLeft'>
                     <div>
                         <h2 className='head_text font-semibold'>
                             HTML
@@ -127,6 +127,9 @@ const Html = () => {
 
                     <h1 className='mt-7 mb-2 font-semibold'>Comment</h1>
                     <p>comment out unused code or to specify</p>
+
+                    <h1 className='mt-7 mb-2 font-semibold'>!Important</h1>
+                    <p>Use alt,lazy in image,rel='noopener noreferrer' in Anchor tag</p>
                 </section >
 
             </div >
