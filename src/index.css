@@ -5,7 +5,7 @@
 body {
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
     background-color: #fff5ef;
-    color: black;
+    color: #333333;
 }
 
 body.dark{
@@ -14,6 +14,27 @@ body.dark{
     color: #fff5ef;
 }
 
+/* index.css or App.css (global CSS file) */
+
+body {
+  /* Add styles to body element */
+  margin: 0; /* Remove default margin */
+  overflow-y: scroll; /* Always show vertical scrollbar */
+}
+
+/* Customize scrollbar appearance */
+body::-webkit-scrollbar {
+  width: 10px; /* Set scrollbar width */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #888; /* Set thumb color */
+  border-radius: 5px; /* Rounded corners for thumb */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Set track color */
+}
 
 
 * {

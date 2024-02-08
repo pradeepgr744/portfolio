@@ -140,7 +140,7 @@ const Html = () => {
             </div>
             <div className='bg-gray-950'>
 
-                <canvas ref={canvasRef} id="canvas3d" height={420}/>
+                <canvas ref={canvasRef} id="canvas3d" loading="lazy" height={420}/>
             </div>
         </>
     )

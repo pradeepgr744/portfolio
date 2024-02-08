@@ -116,7 +116,7 @@ const Home = () => {
   return (
     <>
       <section>
-        <div className=' lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%] m-auto h-[100dvh]'>
+        <div className=' lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%] m-auto h-screen flex flex-col items-start justify-center'>
           <div className='md:w-[75%] sm:w-[100%] mobile:w-[100%] mobile:m-auto'>
             <div className='flex justify-between'>
               <img src="/images/img2.jpg" alt="" className='w-[150px] mobile:w-[120px] rounded-full m-3 mobile:mt-20 mt-10 mb-10 shadow-2xl shadow-[#fdb724]  animate__animated animate__fadeInDown' />
@@ -132,7 +132,7 @@ const Home = () => {
               </div>
             </div>
             <div>
-              <p className='md:text-[40px]  text-gray-800 md:leading-[1.3] sm:text-2xl mobile:text-xl font-light'>Hi, I'm
+              <p className='md:text-[40px] md:leading-[1.3] sm:text-2xl mobile:text-xl font-light'>Hi, I'm
                 <span className='font-semibold text-black'><TypeAnimation
                   sequence={[" Pradeep "]}
                   speed={{ type: 'keyStrokeDelayInMs', value: 100 }}
