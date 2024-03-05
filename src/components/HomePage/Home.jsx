@@ -228,7 +228,7 @@ const Home = () => {
             </span>
           </button></NavLink>
 
-        <div className="flex flex justify-center m-20">
+        <div className="flex justify-center m-20">
           <Portfolio_Card />
         </div>
 

@@ -30,7 +30,7 @@ export const Bottompage = () => {
         <Link
           heading="Careers"
           subheading=""
-          imgSrc="https://www.youtube.com/s/desktop/77953cee/img/favicon_144x144.png"
+          imgSrc="https://www.safepro.tech/static/media/safepro_logo.2c46d8ae2b3a2a28ab268d43adfbd4fd.svg"
           href="https://www.safepro.tech/"
         />
         <Link
