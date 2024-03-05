@@ -197,7 +197,7 @@ const Home = () => {
           class="rounded-lg m-auto my-10 relative w-36 h-10 cursor-pointer flex items-center border border-none bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% group hoverbg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% active:bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
         >
           <span
-            className="text-gray-200 font-semibold ml-5 transform group-hover:translate-x-32 transition-all duration-300"
+            className="text-[#fff5ef] font-semibold ml-5 transform group-hover:translate-x-32 transition-all duration-300 overflow-hidden"
           >View More</span>
           <span
             class="absolute right-0 h-full w-10 rounded-lg bg-transparent flex items-center justify-center transform group-hover:translate-x-0 group-hover:w-full transition-all duration-300"
@@ -218,7 +218,7 @@ const Home = () => {
             class="rounded-lg m-auto my-10 mb-28 relative w-36 h-10 cursor-pointer flex items-center border border-none bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% group hoverbg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% active:bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
           >
             <span
-              className="text-gray-200 font-semibold ml-5 transform group-hover:translate-x-32 transition-all duration-300 "
+              className="text-[#fff5ef] font-semibold ml-5 transform group-hover:translate-x-32 transition-all duration-300 overflow-hidden"
             >View More</span>
             <span
               class="absolute right-0 h-full w-10 rounded-lg bg-transparent flex items-center justify-center transform group-hover:translate-x-0 group-hover:w-full transition-all duration-300"
