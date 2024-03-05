@@ -6,7 +6,15 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   const [isCanvasLoaded, setCanvasLoaded] = useState(false);
-
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional smooth scrolling behavior
+    });
+  }
+  useEffect(() => {
+    scrollToTop()
+  }, [])
   useEffect(() => {
     // Simulate an asynchronous task (e.g., loading assets) here
     // For demonstration purposes, we'll use a setTimeout

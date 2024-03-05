@@ -10,14 +10,11 @@ const Html = () => {
         const canvas = canvasRef.current;
         const app = new Application(canvas);
 
-        // Load the Spline scene when the component mounts
         app.load('https://prod.spline.design/RGOEyZs80NyOGRAh/scene.splinecode');
 
-        // Clean up resources when the component unmounts
         return () => {
-            // Perform any necessary cleanup here, e.g., stopping animations or releasing resources
         };
-    }, []); // Empty dependency array to ensure the effect runs only once on mount
+    }, []); 
 
     return (
         <>
@@ -107,7 +104,7 @@ const Html = () => {
                         <li><code>&lt;section&gt;</code>: Section.</li>
                         <li><code>&lt;nav&gt;</code>: Navigation.</li>
                         <li><code>&lt;aside&gt;</code>: Sidebar content.</li>
-            <img src="https://media.licdn.com/dms/image/D4E12AQGuR3Fo5vHW9A/article-cover_image-shrink_720_1280/0/1691429662154?e=2147483647&v=beta&t=_vo7AXuXOCAsDO_Y4BikTZtORNJoL9zbTd9WeiLCZz4"alt=""/>
+            <img src="https://media.licdn.com/dms/image/D4E12AQGuR3Fo5vHW9A/article-cover_image-shrink_720_1280/0/1691429662154?e=2147483647&v=beta&t=_vo7AXuXOCAsDO_Y4BikTZtORNJoL9zbTd9WeiLCZz4"alt="" loading='lazy'/>
             
                     </ol >
                     <h1 className='mt-7 mb-2 font-semibold'>Pared and Unpared Tags</h1>
@@ -134,9 +131,9 @@ const Html = () => {
 
             </div >
             <div className="flex justify-center mobile:flex-col">
-                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DE6ETblMjlNqG7EB7hsSNITN1KgKgcn7zb04DP1mcUaDCwhJ" alt=""
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DE6ETblMjlNqG7EB7hsSNITN1KgKgcn7zb04DP1mcUaDCwhJ" alt=""  loading='lazy'
                 />
-                <img src="https://www.mixamo.com/api/v1/characters/7f3f4e32-2b70-4c69-9a3d-0bdac6188241/assets/thumbnails/static.png" alt="" />
+                <img src="https://www.mixamo.com/api/v1/characters/7f3f4e32-2b70-4c69-9a3d-0bdac6188241/assets/thumbnails/static.png" alt="" loading='lazy' />
             </div>
             <div className='bg-gray-950'>
 

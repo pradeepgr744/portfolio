@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Card from '../card/Card'
 
 const myProjects = [
@@ -66,7 +66,7 @@ const myProjects = [
     link: "#"
   },
   {
-    image: "/images/question.jpg",
+    image: "https://res.cloudinary.com/dt1vfv8jv/image/upload/v1709659642/my%20portfolio/gbaa7njxyp34fygocmbe.jpg",
     title: "Interview",
     tools: "Question%Answers",
     duration: "1-Month",
@@ -75,6 +75,15 @@ const myProjects = [
 ]
 
 const Blog = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional smooth scrolling behavior
+    });
+  }
+  useEffect(() => {
+    scrollToTop()
+  }, [])
   return (
     <>
       <div className='w-[80%] flex flex-wrap justify-center m-auto my-10 bg-transparent gap-5 transition-all ease-in-out duration-1000 animate__animated animate__slideInUp'>

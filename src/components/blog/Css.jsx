@@ -199,7 +199,7 @@ Z-index property
                     <p>HTML forms the design part of web content</p>
                 </div>
                 <div className='flex justify-center'>
-                    <img src="https://www.mixamo.com/api/v1/characters/7f3f4e32-2b70-4c69-9a3d-0bdac6188241/assets/thumbnails/static.png" alt="" />
+                    <img src="https://www.mixamo.com/api/v1/characters/7f3f4e32-2b70-4c69-9a3d-0bdac6188241/assets/thumbnails/static.png" alt="" loading='lazy'  />
 
                 </div>
                 <div>
@@ -237,7 +237,7 @@ Z-index property
                 <br />
                 <h2>CSS Box Model</h2>
                 <div className='flex justify-center'>
-                    <img src="/images/box_model.png" alt="" className='w-64' />
+                    <img src="https://res.cloudinary.com/dt1vfv8jv/image/upload/v1709659631/my%20portfolio/ovckqpcszikcv2j8abr3.png" alt="" className='w-64' loading='lazy' />
                 </div>
                 <SyntaxHighlighter language="javascript" style={solarizedlight} >
                     {box}

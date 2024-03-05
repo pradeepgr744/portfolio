@@ -4,7 +4,15 @@ import { Application } from '@splinetool/runtime';
 
 const Model = () => {
   const canvasRef = useRef(null);
-
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional smooth scrolling behavior
+    });
+  }
+  useEffect(() => {
+    scrollToTop()
+  }, [])
   useEffect(() => {
     const canvas = canvasRef.current;
     const app = new Application(canvas);
@@ -23,7 +31,7 @@ const Model = () => {
   return (
     <>
     <div className='bg-gray-950'>
-    <canvas ref={canvasRef} id="canvas3d"/>
+    {/* <canvas ref={canvasRef} id="canvas3d"/> */}
     </div>
     </>
 

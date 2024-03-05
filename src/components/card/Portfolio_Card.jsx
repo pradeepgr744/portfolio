@@ -9,7 +9,7 @@ const Portfolio_Card = () => {
         <div className="card h-[270px] w-[220px] ">
             <div className="bg-[#ff5858] h-[70px] items-center flex m-auto">
                 <div className="w-[38%]">
-                    <img src="/images/img2.jpg" alt="" className='w-[50px] m-auto rounded-[10px]' />
+                    <img src="/images/img2.jpg" alt="" className='w-[50px] m-auto rounded-[10px]'  loading='lazy'/>
                 </div>
                 <div className='text-white w-auto px-2'>
                     <p className="font-semibold text-sm bg-[#414141] px-1 rounded-md w-fit mb-1">Pradeep</p>

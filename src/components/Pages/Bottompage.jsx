@@ -1,33 +1,42 @@
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
 
 export const Bottompage = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional smooth scrolling behavior
+    });
+  }
+  useEffect(() => {
+    scrollToTop()
+  }, [])
   return (
     <section className="bg-neutral-950 p-4 md:p-8">
       <div className="mx-auto max-w-5xl">
         <Link
           heading="About"
           subheading="Learn what we do here"
-          imgSrc="/images/aboutimg.png"
+          imgSrc="https://res.cloudinary.com/dt1vfv8jv/image/upload/v1709659642/my%20portfolio/riidhacg52tt8u2ge6x6.png"
           href="/about"
         />
         <Link
           heading="Portfolio"
           subheading="Our work speaks for itself"
-          imgSrc="/images/portfolio.png"
+          imgSrc="https://res.cloudinary.com/dt1vfv8jv/image/upload/v1709659640/my%20portfolio/btcbygnvkqtyb9fthm7y.png"
           href="/"
         />
         <Link
           heading="Careers"
           subheading=""
-          imgSrc="/images/work.svg"
+          imgSrc="https://www.youtube.com/s/desktop/77953cee/img/favicon_144x144.png"
           href="https://www.safepro.tech/"
         />
         <Link
           heading="Contact_Form"
           subheading="Let's get Connected"
-          imgSrc="/images/contect_form.png"
+          imgSrc="https://res.cloudinary.com/dt1vfv8jv/image/upload/v1709659631/my%20portfolio/kr37klsvk29m45ii4n6c.png"
           href="/contact"
         />
       </div>

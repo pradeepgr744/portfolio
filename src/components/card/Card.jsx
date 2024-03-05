@@ -9,10 +9,10 @@ function Card({Projects}) {
     
     <Link to={Projects?.link}>
       <div
-        className="card_design w-[273px] m-2 rounded-xl border hover:w-[305px] cursor-pointer">
+        className="card_design w-[273px] m-2 rounded-xl border cursor-pointer">
 
         <img src={Projects?.image}
-          alt='snippet.title'
+          alt='snippet.title'  loading='lazy'
           className="h-[200px] w-full p-2 pb-0 rounded-3xl object-cover"
         />
 

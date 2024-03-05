@@ -9,14 +9,14 @@ import { NavLink } from 'react-router-dom';
 
 const myProjects = [
   {
-    "image": "/images/Youtube.svg",
+    "image": "https://www.youtube.com/s/desktop/77953cee/img/favicon_144x144.png",
     "title": "Youtube Clone",
     "tools": "Reactjs,Rapid Api,Tailwind",
     "duration": "1-Month",
     "link": "https://youtube-clone-teal-beta.vercel.app/"
   },
   {
-    "image": "images/chatbot.png",
+    "image": "https://res.cloudinary.com/dt1vfv8jv/image/upload/v1709659638/my%20portfolio/dt1zirfprkbmdqhfwuju.png",
     "title": "Chat-Bot",
     "tools": "Reactjs,Gemeni API,Tailwind",
     "duration": "15-days",
@@ -55,7 +55,16 @@ const Home = () => {
   const ref = useRef(null);
   const [date, setDate] = useState(new Date());
   const notificationDisplayed = useRef(false);
-
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional smooth scrolling behavior
+    });
+  }
+  useEffect(() => {
+    scrollToTop()
+  }, [])
+  
   useEffect(() => {
     const notificationTimeout = setTimeout(() => {
       setDate(new Date());
@@ -88,7 +97,7 @@ const Home = () => {
         <div className="flex-1 w-0 p-4">
           <div className="flex items-start">
             <div className="flex-shrink-0 pt-0.5">
-              <img className="h-10 w-10 rounded-full" src="/images/img1.jpg" alt="" />
+              <img className="h-10 w-10 rounded-full" src="/images/img2.jpg" alt="" loading='lazy' />
             </div>
             <div className="ml-3 flex-1">
               <h1 className="text-sm font-medium text-gray-900 flex justify-between">
@@ -119,7 +128,7 @@ const Home = () => {
         <div className=' lg:w-[80%] md:w-[90%] sm:w-[90%] mobile:w-[90%] m-auto h-screen flex flex-col items-start justify-center'>
           <div className='md:w-[75%] sm:w-[100%] mobile:w-[100%] mobile:m-auto'>
             <div className='flex justify-between'>
-              <img src="/images/img2.jpg" alt="" className='w-[150px] mobile:w-[120px] rounded-full m-3 mobile:mt-20 mt-10 mb-10 shadow-2xl shadow-[#fdb724]  animate__animated animate__fadeInDown' />
+              <img src="/images/img2.jpg" alt="" loading='lazy' className='w-[150px] mobile:w-[120px] rounded-full m-3 mobile:mt-20 mt-10 mb-10 shadow-2xl shadow-[#fdb724]  animate__animated animate__fadeInDown' />
               <div className="tooltip-container mt-48 mr-20">
                 <div className="tooltip">
                   <div className="text">Save Trees</div>

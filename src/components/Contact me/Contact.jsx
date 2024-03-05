@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Confetti from "react-confetti";
 import { useForm } from 'react-hook-form';
 import axios from "axios";
@@ -9,7 +9,15 @@ import { Toaster, toast } from "react-hot-toast";
 const Contact = () => {
   const [showConfetti, setShowConfetti] = useState(false);
   const confettiRef = useRef();
-
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional smooth scrolling behavior
+    });
+  }
+  useEffect(() => {
+    scrollToTop()
+  }, [])
   const { register, handleSubmit, reset } = useForm();
   const [mob, setNum1] = useState("");
   const handleNumChangeM = (event) => {

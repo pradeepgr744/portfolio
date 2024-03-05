@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Bottompage } from '../Pages/Bottompage.jsx';
 import Portfolio_Card from '../card/Portfolio_Card';
 import Card from '../card/Card';
@@ -6,14 +6,14 @@ import Card from '../card/Card';
 
 const myProjects = [
   {
-    "image": "/images/Youtube.svg",
+    "image": "https://www.youtube.com/s/desktop/77953cee/img/favicon_144x144.png",
     "title": "Youtube Clone",
     "tools": "Reactjs,Rapid Api,Tailwind",
     "duration": "1-Month",
     "link":"https://youtube-clone-teal-beta.vercel.app/"
   },
   {
-    "image": "images/chatbot.png",
+    "image": "https://res.cloudinary.com/dt1vfv8jv/image/upload/v1709659638/my%20portfolio/dt1zirfprkbmdqhfwuju.png",
     "title": "Chat-Bot",
     "tools": "Reactjs,Gemeni API,Tailwind",
     "duration": "15-days",
@@ -48,7 +48,7 @@ const myProjects = [
     "link":"https://zomato-clone-ochre.vercel.app/"
   },
   {
-    "image": "/images/cal.png",
+    "image": "https://res.cloudinary.com/dt1vfv8jv/image/upload/v1709659631/my%20portfolio/pomgbmtxykedjedhkejm.png",
     "title": "3d Calculator",
     "tools": "Reactjs,Tailwind",
     "duration": "15days",
@@ -66,7 +66,15 @@ const myProjects = [
 
 
 const Projects = () => {
-
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional smooth scrolling behavior
+    });
+  }
+  useEffect(() => {
+    scrollToTop()
+  }, [])
   return (
     <>
       <div className='w-[80%] flex flex-wrap justify-center m-auto my-10 bg-transparent gap-5 ease-in-out transition-all duration-1000 animate__animated animate__slideInUp'>
