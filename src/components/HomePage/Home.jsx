@@ -161,7 +161,7 @@ const Home = () => {
                 brilliance.</p>
             </div>
             <div className='mt-5 leading-[1.2] text-sm'>
-              <p>Previously @<a href='https://www.safepro.tech/' target='_blank' rel='noopener noreferrer' className='text-blue-500'>Safepro</a> as Intern</p>
+{/*               <p>Previously @<a href='https://www.safepro.tech/' target='_blank' rel='noopener noreferrer' className='text-blue-500'>Safepro</a> as Intern</p> */}
               <p>Pasionate about <span className='font-semibold'>solving complex problems </span> <span>that significantly ease the life of the end user.</span></p>
             </div>
           </div>
