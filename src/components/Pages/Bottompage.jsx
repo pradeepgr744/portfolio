@@ -28,12 +28,6 @@ export const Bottompage = () => {
           href="/"
         />
         <Link
-          heading="Careers"
-          subheading=""
-          imgSrc="https://www.safepro.tech/static/media/safepro_logo.2c46d8ae2b3a2a28ab268d43adfbd4fd.svg"
-          href="https://www.safepro.tech/"
-        />
-        <Link
           heading="Contact_Form"
           subheading="Let's get Connected"
           imgSrc="https://res.cloudinary.com/dt1vfv8jv/image/upload/v1709659631/my%20portfolio/kr37klsvk29m45ii4n6c.png"
