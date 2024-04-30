@@ -68,9 +68,15 @@ const myProjects = [
   {
     image: "https://res.cloudinary.com/dt1vfv8jv/image/upload/v1709659642/my%20portfolio/gbaa7njxyp34fygocmbe.jpg",
     title: "Interview",
-    tools: "Question%Answers",
+    tools: "Question&Answers",
     duration: "1-Month",
     link: "#"
+  }, {
+    image: "https://education.oracle.com/file/general/p-80-java.png",
+    title: "Java",
+    tools: "OOP's",
+    duration: "10 min",
+    link: "/Demo"
   }
 ]
 

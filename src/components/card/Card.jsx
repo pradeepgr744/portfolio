@@ -12,7 +12,7 @@ function Card({Projects}) {
         className="card_design w-[273px] m-2 rounded-xl border cursor-pointer">
 
         <img src={Projects?.image}
-          alt='snippet.title'  loading='lazy'
+          alt={Projects?.title}  loading='lazy'
           className="h-[200px] w-full p-2 pb-0 rounded-3xl object-cover"
         />
 
