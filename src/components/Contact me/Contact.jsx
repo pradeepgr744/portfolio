@@ -148,6 +148,7 @@ const Contact = () => {
         setShowConfetti(true);
         reset();
         setNum1("");
+        setDisabled(false)
       } catch (error) {
         setDisabled(false)
         console.error(error);
