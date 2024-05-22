@@ -24,7 +24,7 @@ const myProjects = [
     link: "#"
   },
   {
-    image: "https://pbs.twimg.com/profile_images/446356636710363136/OYIaJ1KK_400x400.png",
+    image: "https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
     title: "Reactjs",
     tools: "Framework",
     duration: "20-days",
