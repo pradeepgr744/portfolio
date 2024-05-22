@@ -8,6 +8,7 @@ import { Toaster, toast } from "react-hot-toast";
 
 const Contact = () => {
   const [showConfetti, setShowConfetti] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   const confettiRef = useRef();
   const scrollToTop = () => {
     window.scrollTo({
@@ -26,7 +27,7 @@ const Contact = () => {
     setNum1(numericValue.slice(0, limit1));
   };
   const onSubmit = async (data) => {
-    
+    setDisabled(true)
     const options1 = {
       method: 'POST',
       url: 'https://send-mail-serverless.p.rapidapi.com/send',
@@ -148,6 +149,7 @@ const Contact = () => {
         reset();
         setNum1("");
       } catch (error) {
+        setDisabled(false)
         console.error(error);
         toast.error('Try again')
       }
@@ -206,7 +208,7 @@ const Contact = () => {
               />
               <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Message</label>
             </div>
-            <button className="relative border hover:border-sky-600 duration-500 group cursor-pointer text-sky-50  overflow-hidden h-12 w-44 rounded-md bg-sky-800 p-2 flex justify-center items-center font-extrabold">
+            <button className="relative border hover:border-sky-600 duration-500 group cursor-pointer text-sky-50  overflow-hidden h-12 w-44 rounded-md bg-sky-800 p-2 flex justify-center items-center font-extrabold" disabled={disabled}>
               <div className="absolute z-10 w-48 h-48 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-sky-900 delay-150 group-hover:delay-75"></div>
               <div className="absolute z-10 w-40 h-40 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-sky-800 delay-150 group-hover:delay-100"></div>
               <div className="absolute z-10 w-32 h-32 rounded-full group-hover:scale-150 transition-all  duration-500 ease-in-out bg-sky-700 delay-150 group-hover:delay-150"></div>
