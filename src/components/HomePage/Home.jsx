@@ -29,14 +29,14 @@ const myProjects = [
     "duration": "15days",
     "link": "https://weather-sigma-beryl.vercel.app/"
   }, {
-    image: "https://assets.materialup.com/uploads/a8b481f3-cb72-43e1-88b0-ebc47fb9010c/attachment.png",
+    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FHTML&psig=AOvVaw0HqHbHiujP3r6Id7ycH1tP&ust=1725513799925000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPCivPrFqIgDFQAAAAAdAAAAABAE",
     title: "HTML",
     tools: "skeleton",
     duration: "10-days",
     link: "/htmldoc"
   },
   {
-    image: "https://assets.materialup.com/uploads/65010d00-ceba-4bb6-879e-af5ae01ea17d/attachment.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/120px-CSS3_logo_and_wordmark.svg.png",
     title: "CSS",
     tools: "Body",
     duration: "20-days",
