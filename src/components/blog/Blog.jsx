@@ -3,14 +3,14 @@ import Card from '../card/Card'
 
 const myProjects = [
   {
-    image: "https://assets.materialup.com/uploads/a8b481f3-cb72-43e1-88b0-ebc47fb9010c/attachment.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png",
     title: "HTML",
     tools: "skeleton",
     duration: "10-days",
     link: "/htmldoc"
   },
   {
-    image: "https://assets.materialup.com/uploads/65010d00-ceba-4bb6-879e-af5ae01ea17d/attachment.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/120px-CSS3_logo_and_wordmark.svg.png",
     title: "CSS",
     tools: "Body",
     duration: "20-days",
