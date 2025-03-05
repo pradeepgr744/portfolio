@@ -4,17 +4,17 @@ import './blog.css'
 import { Helmet } from 'react-helmet';
 
 const Html = () => {
-    const canvasRef = useRef(null);
+    // const canvasRef = useRef(null);
 
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        const app = new Application(canvas);
+    // useEffect(() => {
+    //     const canvas = canvasRef.current;
+    //     const app = new Application(canvas);
 
-        app.load('https://prod.spline.design/RGOEyZs80NyOGRAh/scene.splinecode');
+    //     app.load('https://prod.spline.design/RGOEyZs80NyOGRAh/scene.splinecode');
 
-        return () => {
-        };
-    }, []); 
+    //     return () => {
+    //     };
+    // }, []); 
 
     return (
         <>
