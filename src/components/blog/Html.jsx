@@ -135,10 +135,10 @@ const Html = () => {
                 />
                 <img src="https://www.mixamo.com/api/v1/characters/7f3f4e32-2b70-4c69-9a3d-0bdac6188241/assets/thumbnails/static.png" alt="" loading='lazy' />
             </div>
-            <div className='bg-gray-950'>
+{/*             <div className='bg-gray-950'>
 
                 <canvas ref={canvasRef} id="canvas3d" loading="lazy" height={420}/>
-            </div>
+            </div> */}
         </>
     )
 }
